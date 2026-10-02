@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  font-family: ui-sans-system, system-ui, -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #8b5cf6, #06b6d4);
+  border-radius: 8px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #818cf8, #a78bfa, #22d3ee);
+}
+
+/* Grid pattern helper */
+.bg-grid {
+  background-image: linear-gradient(to right, rgb(100 116 139 / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(100 116 139 / 0.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.dark .bg-grid {
+  background-image: linear-gradient(to right, rgb(148 163 184 / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.1) 1px, transparent 1px);
+}
